@@ -1,0 +1,48 @@
+# ============================================================
+# InfoLeader - fichiers exclus du depot
+# ============================================================
+
+# ---- Secrets et donnees locales -----------------------------
+# storage/config contient le compte administrateur (e-mail + hash)
+# et la configuration SMTP (mot de passe du compte d'envoi).
+# Ces fichiers ne doivent JAMAIS etre publies.
+/storage/config/
+/storage/logs/
+/storage/data/
+
+# Fichiers temporaires : on garde le dossier, pas son contenu
+/storage/tmp/*
+!/storage/tmp/index.php
+
+# ---- Dependances installees par Composer --------------------
+# Reinstallables avec : php composer.phar install
+/vendor/
+/composer.phar
+
+# ---- Visuels produits televerses depuis l'administration ----
+# Les six images d'origine du projet sont versionnees ;
+# decommenter les lignes suivantes pour exclure les ajouts locaux.
+# /assets/products/*
+# !/assets/products/casque.jpg
+# !/assets/products/clavier.jpg
+# !/assets/products/ecran.jpg
+# !/assets/products/hub.jpg
+# !/assets/products/souris.jpg
+# !/assets/products/webcam.jpg
+
+# ---- Environnements et outils -------------------------------
+.env
+.env.*
+*.log
+
+# ---- Editeurs -----------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ---- Systeme ------------------------------------------------
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store

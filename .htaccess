@@ -1,0 +1,33 @@
+# ==========================================================
+# InfoLeader - protections HTTP a la racine du projet
+# ==========================================================
+
+# Fichiers de dependances et outils : aucun interet public
+<FilesMatch "^(composer\.(phar|json|lock)|\.gitignore|README\.md)$">
+    Require all denied
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Masquage de la signature du serveur et en-tetes de securite
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "same-origin"
+</IfModule>
+
+# Pas de listing de repertoire
+Options -Indexes
+
+# Revalidation des fichiers statiques
+# Les pages referencent deja style.css?v=... et script.js?v=... ; cette
+# regle evite en plus qu'un navigateur serve une version perimee sans
+# verifier aupres du serveur (cause de mises en page cassees apres une
+# modification du CSS).
+<FilesMatch "\.(css|js|json)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "no-cache, must-revalidate"
+    </IfModule>
+</FilesMatch>

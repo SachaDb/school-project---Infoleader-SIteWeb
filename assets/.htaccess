@@ -1,0 +1,5 @@
+# Aucun script executable dans les visuels
+<FilesMatch "\.(php|phtml|phar|phps|cgi|pl|py|sh)$">
+    Require all denied
+</FilesMatch>
+Options -Indexes

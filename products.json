@@ -1,0 +1,44 @@
+[
+    {
+        "id": "p412cd524",
+        "nom": "Clavier mécanique RGB",
+        "prix": 59.99,
+        "description": "Clavier mécanique avec switches rouges, rétroéclairage RGB et repose-poignets confortable.",
+        "image": "assets/products/clavier.jpg"
+    },
+    {
+        "id": "p684bd13f",
+        "nom": "Souris gamer 12 000 DPI",
+        "prix": 34.99,
+        "description": "Souris ergonomique avec capteur optique précis, 6 boutons programmables et câble tressé.",
+        "image": "assets/products/souris.jpg"
+    },
+    {
+        "id": "peced4d8c",
+        "nom": "Écran 4K UHD 27\"",
+        "prix": 289.99,
+        "description": "Écran IPS 27 pouces, résolution 4K, 99 % sRGB, parfait pour les créatifs et le gaming.",
+        "image": "assets/products/ecran.jpg"
+    },
+    {
+        "id": "p49e6a773",
+        "nom": "Casque audio sans fil 7.1",
+        "prix": 79.99,
+        "description": "Casque surround 7.1, micro antibruit détachable et 20 heures d'autonomie.",
+        "image": "assets/products/casque.jpg"
+    },
+    {
+        "id": "p91c6161a",
+        "nom": "Webcam Full HD 1080p",
+        "prix": 39.99,
+        "description": "Webcam avec autofocus, réduction de bruit et micro stéréo pour des visioconférences nettes.",
+        "image": "assets/products/webcam.jpg"
+    },
+    {
+        "id": "p16187b4c",
+        "nom": "Hub USB 3.0",
+        "prix": 24.99,
+        "description": "Hub 4 ports USB 3.0, transfert rapide jusqu'à 5 Gb/s, compatible Mac et PC.",
+        "image": "assets/products/hub.jpg"
+    }
+]
