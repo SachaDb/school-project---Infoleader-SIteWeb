@@ -11,6 +11,7 @@ site qui tourne **uniquement en local sous WAMP**.
 
 ## Table des matières
 
+- [État d'avancement](#état-davancement)
 - [Comment lire ce document](#comment-lire-ce-document)
 - [Contraintes à respecter](#contraintes-à-respecter)
 - [Définition de Terminé](#définition-de-terminé)
@@ -24,6 +25,57 @@ site qui tourne **uniquement en local sous WAMP**.
 - [Séquencement par jalons](#séquencement-par-jalons)
 - [Volontairement hors périmètre](#volontairement-hors-périmètre)
 
+---
+
+## État d'avancement
+
+**Attention à la portée.** Les actions listées comme réalisées ci-dessous l'ont
+été dans le **fork** (`infoleader-tp2ter`, branche `tp2ter`), **pas** sur le site
+d'origine (branche `main`). Le site d'origine est resté volontairement intact :
+il sert de base au TP 3. Sur l'original, **toutes** les actions de ce plan
+restent donc à faire.
+
+Détail des réalisations : [AMELIORATIONS.md](AMELIORATIONS.md) pour le TP 2ter,
+[PANIER.md](PANIER.md) pour le TP 2quater.
+
+### Réalisées dans le fork (12 actions)
+
+| Action | Priorité | Où |
+|---|---|---|
+| 3.1 — Rediriger après l'envoi du formulaire de contact | **P0** | TP 2ter |
+| 2.1 — Page « Mentions légales » | **P0** | TP 2ter |
+| 2.2 — Page « Politique de confidentialité » | **P0** | TP 2ter |
+| 2.3 — Case de consentement validée côté serveur | **P0** | TP 2ter |
+| 1.4 — Empêcher l'accès direct à `products.json` | P1 | TP 2ter |
+| 2.6 — Réduire la conservation des adresses IP | P1 | TP 2ter |
+| 4.1 — Factoriser l'en-tête et le pied de page publics | P1 | TP 2ter |
+| 5.1 — Corriger l'intitulé du bouton « Commander » | P1 | TP 2ter et 2quater |
+| 5.2 — Sortir les scripts et styles en ligne | P1 | TP 2ter |
+| 6.1 — Pages d'erreur 403 et 404 personnalisées | P1 | TP 2ter |
+| 7.2 — Conserver les consignes données à l'agent IA | P1 | les trois TP |
+| 5.4 — Thème sombre | P2 | TP 2ter |
+
+### Restant à faire, y compris sur le fork
+
+| Action | Priorité | Pourquoi ce n'est pas fait |
+|---|---|---|
+| 1.1 — Limiter les envois du formulaire de contact | **P0** | Logique métier : le TP 2ter demandait de ne pas y toucher |
+| 1.3 — Corriger les appels à `filemtime()` non protégés | **P0** | Ne concerne que des fichiers de `admin/`, hors périmètre du TP 2ter |
+| 1.6 — Documenter la procédure de secours du compte admin | **P0** | Touche `admin/` |
+| 1.5 — Restreindre le vhost `infoleader.local` | P1 | **Vérifié : toujours en `Require all granted`.** Le site reste joignable depuis une autre machine du réseau local |
+| 1.7 — Documenter le stockage en clair du mot de passe SMTP | P1 | Touche `admin/email-config.php` |
+| 2.4 et 2.5 — Effacement automatique et suppression d'un message | P1 | Se pilotent depuis le module Maintenance (`admin/`) |
+| 3.2 — Verrou de fichier à l'écriture JSON | P1 | Socle utilisé partout, risque de régression trop élevé pour un TP |
+| 3.3 — Supprimer l'écriture déclenchée par une lecture | P1 | Reste à faire |
+| 4.2 et 4.3 — Gestion centralisée des erreurs, échecs d'écriture visibles | P1 | Reste à faire |
+| 6.3 — Mettre le projet sous Git en local | P1 | **Le fork est sous Git, l'original non** |
+| 7.1 — Procédure de recette manuelle (`RECETTE.md`) | P1 | Reste à faire |
+| 1.8 — En-tête `Content-Security-Policy` | P2 | Prérequis rempli (0 script en ligne dans le fork), mais demande de retester chaque page |
+| 3.4 et 3.5 — Pagination, sauvegarde et restauration | P2 | Reste à faire |
+| 4.4 et 4.5 — Alléger les pages admin, typage strict | P2 | Reste à faire |
+| 5.3, 5.5 et 6.2 — Message de déconnexion, tri du catalogue, `pdo_sqlite` | P2 | Reste à faire |
+| 7.4 — Tests en PHP pur | P2 | Reste à faire |
+| 3.6 — Migration vers SQLite | P2 | **Interdite** par le TP 2ter, et réservée au TP 3 |
 ---
 
 ## Comment lire ce document

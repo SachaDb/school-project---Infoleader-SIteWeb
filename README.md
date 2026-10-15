@@ -1,26 +1,41 @@
-# InfoLeader — Analyse du site et plan d'améliorations
+# InfoLeader — Documentation du projet
 
-Livrables du **TP 2bis** (BTS SIO 1re année) portant sur le site vitrine
-« InfoLeader », développé en PHP / HTML / CSS / JavaScript et fonctionnant en
-local sous WAMP (Apache 2.4.65, PHP 8.3.28, Windows).
+Branche **`documentation`** du projet scolaire InfoLeader : site vitrine d'une
+entreprise informatique fictive, développé en PHP / HTML / CSS / JavaScript et
+fonctionnant en local sous WAMP (Apache 2.4.65, PHP 8.3.28, Windows).
 
-Ce dépôt ne contient **que la documentation**. Le code du site n'y est pas publié.
+Cette branche ne contient **que la documentation**. Le code vit dans les autres
+branches.
 
-| Fichier | Contenu |
+## Les cinq documents
+
+| Document | TP | Contenu |
+|---|---|---|
+| [DOCUMENTATION.md](DOCUMENTATION.md) | 2bis | Analyse technique complète du site : architecture, routage, stockage en fichiers JSON, authentification et sécurité, front-end, intégrations, configuration, points forts, et **28 limites connues** (R1 à R28). |
+| [TODO_LIST.md](TODO_LIST.md) | 2bis | Plan de **31 améliorations** par thème, priorité (P0/P1/P2) et complexité, avec critère d'acceptation, « Définition de Terminé » et 7 jalons. Inclut l'**état d'avancement** réel. |
+| [AMELIORATIONS.md](AMELIORATIONS.md) | 2ter | Travail de qualité réalisé sur le fork : accessibilité, responsive, performances, SEO, UX, conformité RGPD, et thème clair/sombre. Mesures avant/après et **deux bugs réels** corrigés. |
+| [PANIER.md](PANIER.md) | 2quater | Panier et commande simulée, 100 % côté navigateur : parcours, clés `localStorage`, calculs de TVA, accessibilité, tests mesurés et limites assumées. |
+| [PROMPTS.md](PROMPTS.md) | les trois | Consignes exactes données à l'agent IA, et ce que la vérification a permis de corriger. |
+
+## Les branches du dépôt
+
+| Branche | Contenu |
 |---|---|
-| [DOCUMENTATION.md](DOCUMENTATION.md) | Analyse technique complète : architecture, routage, stockage des données (fichiers JSON), authentification et sécurité, front-end, intégrations, configuration, points forts, et 28 limites connues (R1 à R28). |
-| [TODO_LIST.md](TODO_LIST.md) | Plan de 31 améliorations classées par thème, priorité (P0/P1/P2) et complexité, avec critère d'acceptation, « Définition de Terminé » et séquencement en 7 jalons. |
-| [PROMPTS.md](PROMPTS.md) | Consignes exactes données à l'agent IA et vérifications effectuées sur son travail. |
+| `main` | Le site d'origine, tel qu'issu du TP 2 : site vitrine et panneau d'administration. **Volontairement intact** — c'est la base du TP 3. |
+| `tp2ter` | Le fork de travail : qualité (TP 2ter) puis panier et commande simulée (TP 2quater). |
+| `documentation` | Cette branche : les cinq documents ci-dessus. |
 
-## Contexte technique du site analysé
+## Le projet en bref
 
-- Aucun framework, aucun routeur : Apache fait correspondre directement une URL à un fichier `.php`.
-- **Aucune base de données** : les données sont stockées dans des fichiers JSON et des fichiers PHP de configuration.
-- Dépendance unique : PHPMailer 7.1.1, installée via Composer.
-- Site non déployé : il fonctionne uniquement en local sous WAMP.
+- **Aucun framework**, aucun routeur : Apache fait correspondre directement une URL à un fichier `.php`.
+- **Aucune base de données** : les données vivent dans des fichiers JSON et des fichiers PHP de configuration. Ce choix est assumé et documenté.
+- **Dépendance unique** : PHPMailer 7.1.1, installée via Composer.
+- **Aucune ressource externe** côté navigateur : pas de CDN, pas de police distante. Le site fonctionne sans connexion Internet.
+- Site **non déployé** : il tourne uniquement en local sous WAMP.
 
-## Remarque
+## Ce qui n'est pas publié, et pourquoi
 
-Les fichiers de configuration contenant des secrets (`storage/config/`) ne sont
-pas et ne doivent pas être publiés : ils contiennent le hash du mot de passe
-administrateur et le mot de passe SMTP.
+Les fichiers de `storage/config/` contiennent le hash du mot de passe
+administrateur et le mot de passe SMTP en clair. Ils sont exclus par
+`.gitignore` et ne doivent **jamais** être poussés. Le dossier `vendor/` est
+exclu lui aussi : il se régénère avec `php composer.phar install`.
